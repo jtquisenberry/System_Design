@@ -2,6 +2,8 @@
 
 
 
+# API
+
 ## API Domain Modeling Examples
 1. Refer to the object being acted on: `users`, `statuses`, `friendships`.
 2. If GET, the state what is being retrieved `list`, `ids`, `id:1`
