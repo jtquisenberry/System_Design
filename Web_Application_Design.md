@@ -42,6 +42,11 @@
  * Indexes 
  * Load balancers
 
+## What is sharding?
+
+Can have servers that serve only one subset of clients.
+
+
 
 
 # Web Applications
