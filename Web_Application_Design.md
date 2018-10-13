@@ -15,11 +15,11 @@
 ## Load Balancers
 * Direct a request to one of several request nodes (web servers).
 * May direct to a server based on
- * Which one is least busy.
+  * Which one is least busy.
  * Random
  * Sticky - the user continues to use the same node throughout the session. 
 * Session Data: If a client may be routed to different nodes, there is the challeng of storing session data. This can be overcome by:
- * Cookies
+  * Cookies
  * Browser caches.
 
 ## CDN
