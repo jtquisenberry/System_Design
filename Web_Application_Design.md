@@ -1,4 +1,4 @@
-# jqSystems
+# Web Application Design with Distributed Systems
 
 ## References
 * http://www.aosabook.org/en/distsys.html
@@ -6,20 +6,40 @@
 ## Considerations
 * Speed - low latency
 * Reliability
-* Fault tolerance
-* Storage
-<br>
+* Availability
+* Manageability
+* Scalability
+* Cost
 
 
-# API
+## Load Balancers
+* Direct a request to one of several request nodes (web servers).
+* May direct to a server based on
+ * Which one is least busy.
+ * Random
+ * Sticky - the user continues to use the same node throughout the session. 
+* Session Data: If a client may be routed to different nodes, there is the challeng of storing session data. This can be overcome by:
+ * Cookies
+ * Browser caches.
+
+## CDN
+* Replicate data in different geographic locations. 
+* The replicated data may consist entirely of caches.
+
+## Proxy Servers
+* Often include caches. If so, it is best due check the cache first due to the speed of accessing cache data in memory. 
+* 
 
 
-## API Domain Modeling Examples
-1. Refer to the object being acted on: `users`, `statuses`, `friendships`.
-2. If GET, the state what is being retrieved `list`, `ids`, `id:1`
-3. If POST, state the operation. `create`, `destroy`, `update`.
-4. Use a common interface - singular or plural nounds. Consistent verbs.
-<br> Examples from Twitter: https://developer.twitter.com/en/docs/api-reference-index.html
+
+
+
+
+
+
+
+
+
 
 
 # SQL
