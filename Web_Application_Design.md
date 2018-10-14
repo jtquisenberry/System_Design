@@ -4,7 +4,7 @@
 * http://www.aosabook.org/en/distsys.html
 
 ## Considerations
-* Speed - low latency
+* Performance (Speed - low latency)
 * Reliability
 * Availability
 * Manageability
@@ -42,6 +42,11 @@
 * Local Cache: Stores results of most recent request. This prevents re-querying data from SQL.
 * Global Cache: If the load balancer sends requests to random nodes, there may be cache misses. Some cache contains the necessary response, but it does not happen to be the cache that received the latest request. Use a global cache in this casse.
 * Global Cache: Usually put on its own server. It is responsible for eviction of least recently used results. 
+* Global Cache: Usually in a system that uses this architecture, if a response is not found in a cache, the cache is responsible for querying the data layer. It is also possible for the request layer to query the data layer.
+* Global Cache: can reduce availability.
+* In Python, this is called "request caching". In C#, it is called "response caching".
+* Distributed cache: Cache is spread across request nodes.
+* Distributed cache: If one node goes down, the worst case is that the node queries the database.
 
 ## Data Store Selection
 * SQL: Common scaling techniques.
@@ -56,4 +61,14 @@
 ## Sharding
 * The horizontal partition of data storage, i.e. storing a single dataset across servers.
 * Can have servers that serve only one subset of clients.
+
+## Partitioning
+* The horizontal storage of data across servers. 
+* It might be that this term is more apt in the case of file servers, rather than SQL servers.
+* Determination of which server a file is on can be accomplished using an index (ID, Server pair). 
+* It can also be accomplished using a file naming convention where the name of the file specifies the containing server.
+* SAN
+
+
+
 
